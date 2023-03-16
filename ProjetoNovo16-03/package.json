@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "prompt-sync-history": "^1.0.1",
+    "typ": "^0.6.3",
+    "typescript": "^4.9.5"
+  },
+  "name": "projetonovo16-03",
+  "version": "1.0.0",
+  "description": "Exercicios com menu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Savio Kane",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.3"
+  }
+}
