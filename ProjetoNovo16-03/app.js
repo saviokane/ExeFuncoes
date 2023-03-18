@@ -34,10 +34,8 @@ do {
         var valor = teclado();
         console.log("Informe o percentual: ");
         var percentual = teclado();
-        percentual = Number(percentual);
-        valor = Number(valor);
         var resultado = (0, exerciciosFuncoes_1.calcPorcentagem)(valor, percentual);
-        console.log("O resultado \u00E9: ".concat(resultado, "%"));
+        console.log("".concat(percentual, "% de ").concat(valor, " \u00E9: ").concat(resultado));
     }
     if (opcao == 4) {
         console.log("Informe a base: ");
@@ -45,6 +43,6 @@ do {
         console.log("Informe a altura: ");
         var altura = teclado();
         var resultado = (0, exerciciosFuncoes_1.areaTriangulo)(base, altura);
-        console.log("A \u00E1rea do triangulo \u00E9: ".concat(resultado));
+        console.log("A \u00E1rea do triangulo \u00E9: ".concat(resultado, "M\u00B2"));
     }
 } while (opcao != 5);

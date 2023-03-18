@@ -38,11 +38,8 @@ do{
         let valor = teclado();
         console.log("Informe o percentual: ");
         let percentual = teclado();
-        percentual = Number(percentual);
-        valor = Number(valor);
-
         let resultado = calcPorcentagem(valor,percentual);
-        console.log(`O resultado é: ${resultado}%`);
+        console.log(`${percentual}% de ${valor} é: ${resultado}`);
     }
 
     if(opcao == 4){

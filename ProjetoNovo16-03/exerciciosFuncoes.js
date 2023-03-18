@@ -20,9 +20,8 @@ function exponenciacao(base, expo) {
 }
 exports.exponenciacao = exponenciacao;
 function calcPorcentagem(valor, perce) {
-    var resul1 = (valor * 100) / 100; // aqui ele retorna a porcentagem
-    var resul2 = valor + resul1;
-    return resul2;
+    // aqui ele retorna a porcentagem
+    return (perce / 100) * valor;
 }
 exports.calcPorcentagem = calcPorcentagem;
 function areaTriangulo(base, altura) {

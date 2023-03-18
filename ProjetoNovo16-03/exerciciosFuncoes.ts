@@ -18,9 +18,8 @@ export function exponenciacao(base: number, expo: number): number{
 }
 
 export function calcPorcentagem(valor: number, perce: number): number{
-    let resul1 = (valor * 100) / 100; // aqui ele retorna a porcentagem
-    let resul2 = valor + resul1;
-    return resul2;
+    // aqui ele retorna a porcentagem
+    return (perce / 100) * valor;
 }
 
 export function areaTriangulo(base: number, altura: number): number{
