@@ -1,0 +1,19 @@
+1 Comando npm init 
+2 Instalar TS 
+3 Comando para configurar TS 
+4 Comando para instalar entrada de dados
+
+///
+
+Criação de função:
+
+1 - Objetivo?
+2 - Deve saber ? (Parâmetros).
+3 - Resposta ? -> Retorno -> Tipo.
+
+Como é feito uma aplicação WEB ?
+
+- Requisições e resposta.
+
+- Cliente -> Requisições ->  Servidor
+  Cliente <-  Resposta   <-  Servidor
