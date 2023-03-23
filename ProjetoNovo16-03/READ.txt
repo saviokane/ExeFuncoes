@@ -16,4 +16,6 @@ Como é feito uma aplicação WEB ?
 - Requisições e resposta.
 
 - Cliente -> Requisições ->  Servidor
-  Cliente <-  Resposta   <-  Servidor
+- Cliente <-  Resposta   <-  Servidor
+
+Servidor -> Software (Web Server) -> Apache
