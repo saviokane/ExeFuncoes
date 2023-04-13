@@ -24,5 +24,19 @@ module.exports = {
         if(anotacaoDeletadas){
             return res.json(anotacaoDeletadas);
         }
+    },
+
+    async update (req, res){
+        const { id } = req.params;
+        const {titulo, notas, prioridade} = req.body;
+        const anotacao = await Anotacoes.findOne({_id: id});
+        anotacao.titulo = titulo;
+        anotacao.notas = notas;
+        anotacao.prioridade = prioridade;
+        await anotacao.save();
+        return res.json(anotacao);
     }
+
+    
+
 }
