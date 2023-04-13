@@ -9,6 +9,5 @@ rotas.post("/anotacoes", AnotacaoController.create);
 rotas.delete("/anotacoes/:id", AnotacaoController.delete);
 rotas.post("/anotacoes/id" ,AnotacaoController.update)
 
-
 module.exports = rotas;
 

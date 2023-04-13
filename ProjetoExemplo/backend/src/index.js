@@ -7,7 +7,4 @@ app.use(express.json());
 app.use(rotas);
 require("./config/dbconfig.js");
 
-
-
-
 app.listen(8081);
