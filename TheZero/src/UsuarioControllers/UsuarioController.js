@@ -4,7 +4,7 @@ module.exports = {
     async read(req, res) {
             const usuarioList = await Usuario.find();
             return res.json(usuarioList);
-    },
+    },  
 
     async create(req, res){
         const {nome, usuario, senha, veracidade}= req.body;

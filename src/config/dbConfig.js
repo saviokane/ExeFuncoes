@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const dbConfig = "mongodb://localhost:27071";
+const dbConfig = "mongodb+srv://saviokane:root@cluster0.eh6v9tx.mongodb.net/pessoas?retryWrites=true&w=majority";
 
 const conexao = mongoose.connect(dbConfig,{
-    useNewUrlParser:true,
+    useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
