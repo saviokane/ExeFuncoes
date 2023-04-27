@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dbConfig = "mongodb://localhost:27071";
+const dbConfig = "mongodb://0.0.0.0:27017/usuarios";
 
 const conexao = mongoose.connect(dbConfig,{
     useNewUrlParser:true,
