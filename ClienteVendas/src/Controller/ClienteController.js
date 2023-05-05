@@ -9,7 +9,7 @@ module.exports = {
             const clienteList = await Cliente.find();
             return res.json(clienteList);
         }catch (err){
-            return res.status(400).send({error: 'error ao listar projetos'})
+            return res.status(400).send({error: 'Nenhum cliente encontrado'})
         }
 
     },
@@ -30,10 +30,10 @@ module.exports = {
         return res.status(400).send({error: 'Error ao criar cliente.'})
     }
 
-    /*{
+    /*{ ESTRUTURA YET ANOTHER REST CLIENT
         "nome":"",
         "cpf":"",
-        "email":"",
+        "email":"@gmail.com",
         "telefone":"(41) 9 ",
         "fidelidade": true
     }*/
@@ -68,7 +68,7 @@ module.exports = {
         await clienteUpdate.save();
     return res.json(clienteUpdate);
 }catch (err){
-    return res.status(400).send({error: 'Atualização malsucedida!!!'})
+    return res.status(400).send({error: 'Alteração não concluida, ID não encontrado.'})
 }
 }
 
