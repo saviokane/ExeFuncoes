@@ -9,7 +9,7 @@ module.exports = {
             const clienteList = await Cliente.find();
             return res.json(clienteList);
         }catch (err){
-            return res.status(400).send({error: 'errir ao listar projetos'})
+            return res.status(400).send({error: 'error ao listar projetos'})
         }
 
     },
@@ -29,6 +29,14 @@ module.exports = {
     }catch (err){
         return res.status(400).send({error: 'Error ao criar cliente.'})
     }
+
+    /*{
+        "nome":"",
+        "cpf":"",
+        "email":"",
+        "telefone":"(41) 9 ",
+        "fidelidade": true
+    }*/
     },
 
     async delete (req ,res){
@@ -64,8 +72,6 @@ module.exports = {
 }
 }
 
-
-  
 };
 
 
