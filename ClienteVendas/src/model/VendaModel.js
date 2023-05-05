@@ -4,6 +4,7 @@ const VendaModelSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Cliente'
             },
+            produto: String,
       valor: String,
 
 });

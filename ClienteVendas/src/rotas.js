@@ -10,5 +10,6 @@ rotas.post('/clientes/:id',ClienteControler.update);
 
 rotas.get('/vendas',VendaControler.read);
 rotas.post('/vendas', VendaControler.create);
+rotas.delete('vendas/:id', VendaControler.delete);
 
 module.exports = rotas;
