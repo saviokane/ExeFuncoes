@@ -6,6 +6,8 @@ const ClienteModelSchema = new mongoose.Schema({
     email: String,
     telefone: String,
     fidelidade: Boolean
+
 });
 
-module.exports = mongoose.model("Cliente", ClienteModelSchema);
+
+module.exports = mongoose.model('Cliente', ClienteModelSchema);
