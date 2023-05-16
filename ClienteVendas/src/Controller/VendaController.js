@@ -21,13 +21,14 @@ module.exports = {
     
   async create (req, res) {
     try {
+      // é necessario fazer um require do cliente e usar na const "clienteEncontrado"
       const { cliente, produto ,valor } = req.body;
-      const clienteEncontrado = await Cliente.findById(cliente);
+      const clienteEncontrado = await Cliente.findById(cliente); // aqui puxa o ID do cliente que vc inseriu via post e retorna via JSON abaixo
       const venda = await Venda.create({ 
             
-        cliente: clienteEncontrado._id,
-        cpfCliente: clienteEncontrado.cpf,
-        nomeCliente: clienteEncontrado.nome,
+        cliente: clienteEncontrado._id, // aqui ele buscar todas as informações do cliente encontrado e podemos retornar os dados que referenciamos no MODEL
+        cpfCliente: clienteEncontrado.cpf, // assim como aqui retorna o cpf e nome consecutivamente
+        nomeCliente: clienteEncontrado.nome, 
         produto,
         valor
           
