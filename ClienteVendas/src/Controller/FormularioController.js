@@ -21,6 +21,20 @@ app.use(bodyParser.json());
 
 
 module.exports = {
+// tentativa de criar menu
+    /*async home (req,res){
+        const filePath = path.join(__dirname,'../views/index.html')
+
+        fs.readFile(filePath, 'utf8', (err, data) => {
+         if (err) {
+           console.error('Erro ao ler o arquivo:', err);
+           return res.status(500).send('Ocorreu um erro ao processar a solicitação.');
+         }
+         res.set('Content-Type', 'text/html');
+         res.send(data);
+       });
+    },*/
+    
     async cadastro (req,res){
        const filePath = path.join(__dirname,'../views/formulario.html')
 
@@ -34,19 +48,7 @@ module.exports = {
       });
     },
 
-    async receber (req,res){
-        // const meuCheckbox = req.body.fidelidade || false;
-
-
-        const {nome,cpf,email,telefone,fidelidade} = req.body;
-        res.send("Nome: "+req.body.nome+
-                 "<br>CPF: "+req.body.cpf+
-                 "<br>Email: "+req.body.email+
-                 "<br>Telefone: "+req.body.telefone+
-                 "<br>Fidelidade: "+req.body.fidelidade);
-    },
-
-    async sendtodb (req,res){
+    async register (req,res){
         const {nome,cpf,email,telefone,fidelidade} = req.body;
         
         const clienteCreate = await Cliente.create ({
@@ -63,10 +65,19 @@ module.exports = {
                  "<br>Telefone: "+req.body.telefone+
                  "<br>Fidelidade: "+req.body.fidelidade);
             new Cliente(clienteCreate).save().then(() => {
-                console.log("Salvo no banco de dados!!!");
+                console.log("Cliente registrado no banco de dados !!!");
             })
 
+    },
+// tentativa para retornar as clientes do banco de dados, perguntar ao prof.
+    /*async read(req,res){
+        const clienteList = await Cliente.find();
+
+            return res.send("Nome: "+clienteList.nome);
+           
     }
+    */
+
 }
 // metodo usando html in-line JS
 /*
