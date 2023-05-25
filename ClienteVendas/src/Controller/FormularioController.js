@@ -1,4 +1,4 @@
-const Cliente = require("../model/VendaModel");
+const Cliente = require("../model/ClienteModel");
 const express = require('express');
 const app = express();
 
@@ -29,7 +29,6 @@ module.exports = {
           console.error('Erro ao ler o arquivo:', err);
           return res.status(500).send('Ocorreu um erro ao processar a solicitação.');
         }
-    
         res.set('Content-Type', 'text/html');
         res.send(data);
       });
@@ -37,6 +36,7 @@ module.exports = {
 
     async receber (req,res){
         // const meuCheckbox = req.body.fidelidade || false;
+
 
         const {nome,cpf,email,telefone,fidelidade} = req.body;
         res.send("Nome: "+req.body.nome+
@@ -56,16 +56,14 @@ module.exports = {
             telefone,
             fidelidade
         });
-
-        clienteCreate.nome = nome;
-        clienteCreate.cpf = cpf;
-        clienteCreate.email = email;
-        clienteCreate.telefone = telefone;
-        clienteCreate.fidelidade = fidelidade;
-
-            console.log("Cliente novo salvo pow: ",clienteCreate.nome);
+            console.log("Cliente novo criado: ",clienteCreate.nome+" !!!");
+            res.send("Nome: "+req.body.nome+
+                 "<br>CPF: "+req.body.cpf+
+                 "<br>Email: "+req.body.email+
+                 "<br>Telefone: "+req.body.telefone+
+                 "<br>Fidelidade: "+req.body.fidelidade);
             new Cliente(clienteCreate).save().then(() => {
-                console.log("Cliente novo salvo.");
+                console.log("Salvo no banco de dados!!!");
             })
 
     }
