@@ -19,6 +19,7 @@ rotas.get('/form', FormularioController.formulario);
 rotas.get('/formulario.html', FormularioController.formulario);
 rotas.post('/add', FormularioController.register);
 rotas.get('/menu',FormularioController.menu);
+rotas.get('/listar',FormularioController.listClients);
 // tentativa de leitura BD || rotas.get('/ler',FormularioController.read);
 
 module.exports = rotas;

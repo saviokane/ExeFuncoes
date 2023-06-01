@@ -5,6 +5,10 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 
+// configurando ejs
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
 /* Metodo usando handlebar, porem ao return res.render('formulario');
 não estava sendo encontrado o arquivo 'formulario' 
 const handlebars = require('express-handlebars');
@@ -65,8 +69,18 @@ module.exports = {
             res.redirect('menu');
     },
 
-
+    async listClients(req, res) {
+        try {
+          const clientes = await Cliente.find({});
+          res.render('clientes', { clientes });
+        } catch (error) {
+          console.error("Erro ao listar os clientes:", error);
+          res.status(500).send("Erro ao listar os clientes");
+        }
+      }
 }
+
+
 // metodo usando html in-line JS
 /*
     async cadastro (req,res){

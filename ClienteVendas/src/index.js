@@ -1,6 +1,8 @@
 const express = require("express");
 const rotas = require("./rotas");
 const app = express();
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // configurando body-parser
 const bodyParser = require('body-parser');
