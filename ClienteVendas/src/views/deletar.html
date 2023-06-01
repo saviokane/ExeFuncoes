@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin-left: 35%;
+        margin-right: 35%;
+        margin-top: 15%;
+        background-color: rgb(189, 147, 249);
+        position: relative;
+        text-align: center;
+    }
+    form{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .form-cadastro{
+            border: 2px solid blueviolet;
+            border-radius: 20px;
+            background-color: rgba(169, 146, 226, 0.3)
+        }
+    legend{
+        color: blueviolet;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    div{
+        border: 2px solid rgb(57, 86, 194);
+        border-radius: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(0, 0, 255, 40%);
+
+    }
+    .button{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+
+    .voltar{
+        text-decoration: dotted;
+        background-color: rgb(88, 53, 134);
+        margin-top: 20px;
+        margin-left: 200px;
+        margin-right: 200px;
+        font-size: 20px;
+        border: 2px solid blueviolet;
+        border-radius: 20px;
+        background-color: rgba(169, 146, 226, 0.3)
+    }
+    .voltar a{
+        color: rgb(130, 105, 243);
+    }
+    
+</style>
+<body>
+<legend><h1>Deletar cliente</h1></legend>
+    <div>
+        <form class="form-cadastro" action="delete" method="post">
+            <h1>Insira o ID </h1>
+            <input  type="text" name="id"><br>
+            <input class="button" type="submit" name="enviar"><br>
+        </form>
+    </div>
+    <div class="voltar" >
+        <a  href="./menu.html">Voltar</a>
+        </div>
+</body>
+</html>

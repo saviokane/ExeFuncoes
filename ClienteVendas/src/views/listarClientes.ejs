@@ -12,22 +12,59 @@
     }
     div{
         border: 3px solid rgb(0, 0, 0);
+        border-radius: 20px;
         background-color: rgb(0, 255, 255,30%);
-        margin-left: 35%;
-        margin-right: 35%;
+        margin-left: 30%;
+        margin-right: 30%;
         margin-bottom: 10px;
+    }
+    p{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 26px;
+        
+    }
+    span{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 26px;
+        text-decoration: underline;
+    }
+    a{
+        background-color: rgb(138, 43, 226);
+        text-decoration: underline;
+
+    }
+    .retorna-menu{
+        margin-top: 20px;
+        margin-left: 44%;
+        margin-right: 44%;
+        font-size: 12px;
+        border: 2px solid blueviolet;
+        border-radius: 20px;
+        background-color: rgb(132, 180, 251, 40%);
+    }
+    .voltar a{
+        color: rgb(138, 43, 226);
+        
+    }
+    h1{
+        color: rgb(138, 43, 226);
+        text-decoration: dotted;
     }
 </style>
 <body>
-    <a href="menu.html"><h1>MENUUUUU</h1></a>
+    <div class="retorna-menu">
+        <a href="menu.html"><h1>Retorna ao Menu</h1></a>
+    </div>
+    
     <h1>Lista de Clientes</h1>
     <% clientes.forEach(function(cliente) { %>
         <div>
-        <p>Nome: <%= cliente.nome %></p>
-        <p>CPF: <%= cliente.cpf %></p>
-        <p>Email: <%= cliente.email %></p>
-        <p>Telefone: <%= cliente.telefone %></p>
-        <p>Fidelidade: <%= cliente.fidelidade %></p>
+        <p>ID: <span><%= cliente._id %></span></p>
+        <p>Nome: <span><%= cliente.nome %></span></p>
+        <p>CPF: <span><%= cliente.cpf %></span></p>
+        <p>Email: <span><%= cliente.email %></span></p>
+        <p>Telefone: <span><%= cliente.telefone %></span></p>
+        <p>Fidelidade: <span><%= cliente.fidelidade %></span></p>
         </div>
     <% }); %>
 </body>

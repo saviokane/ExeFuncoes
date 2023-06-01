@@ -20,7 +20,6 @@ module.exports = {
     
     async formulario (req,res){
        const filePath = path.join(__dirname,'../views/formulario.html')
-
        fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
           console.error('Erro ao ler o arquivo:', err);
@@ -33,7 +32,6 @@ module.exports = {
 
     async menu (req,res){
         const filePath = path.join(__dirname,'../views/menu.html')
- 
         fs.readFile(filePath, 'utf8', (err, data) => {
          if (err) {
            console.error('Erro ao ler o arquivo:', err);
@@ -46,7 +44,6 @@ module.exports = {
 
     async register (req,res){
         const {nome,cpf,email,telefone,fidelidade} = req.body;
-        
         const clienteCreate = await Cliente.create ({
             nome,
             cpf,
@@ -55,7 +52,6 @@ module.exports = {
             fidelidade
         });
             console.log("Cliente novo criado: ",clienteCreate.nome+" !!!");
-            
             res.redirect('menu');
     },
 
@@ -63,8 +59,41 @@ module.exports = {
         
           const clientes = await Cliente.find();
           res.render('listarClientes.ejs', { clientes });
-        }
-      }
+        },
+
+
+
+    
+        async deletar (req,res){
+          const filePath = path.join(__dirname,'../views/deletar.html')
+   
+          fs.readFile(filePath, 'utf8', (err, data) => {
+           if (err) {
+             console.error('Erro ao ler o arquivo:', err);
+             return res.status(500).send('Arquivo não foi encontrado.');
+           }
+           res.set('Content-Type', 'text/html');
+           res.send(data);
+         });
+       },
+
+
+       async delete(req, res) {
+        const { id } = req.body;
+            const clienteDeletado = await Cliente.findByIdAndDelete(id);
+            
+            console.log('Cliente deletado:', clienteDeletado.nome);
+            res.redirect('/menu.html');    
+    },
+
+  
+
+
+
+  }
+
+
+    
 
 
 

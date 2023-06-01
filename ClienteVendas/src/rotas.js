@@ -24,5 +24,7 @@ rotas.get('/menu.html',FormularioController.menu);
 
 rotas.get('/listarClientes.ejs',FormularioController.listClientes);
 
+rotas.get('/deletar.html',FormularioController.deletar);
+rotas.post('/delete',FormularioController.delete);
 
 module.exports = rotas;
