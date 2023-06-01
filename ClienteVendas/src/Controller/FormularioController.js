@@ -70,15 +70,14 @@ module.exports = {
     },
 
     async listClients(req, res) {
-        try {
-          const clientes = await Cliente.find({});
-          res.render('clientes', { clientes });
-        } catch (error) {
-          console.error("Erro ao listar os clientes:", error);
-          res.status(500).send("Erro ao listar os clientes");
+        
+          const clientes = await Cliente.find();
+          res.render('listarClientes.ejs', { clientes });
         }
       }
-}
+
+
+
 
 
 // metodo usando html in-line JS

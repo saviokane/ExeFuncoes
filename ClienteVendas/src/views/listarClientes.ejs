@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Lista de Clientes</h1>
-    <% clientes.forEach(cliente => { %>
+    <% clientes.forEach(function(cliente) { %>
         <p>Nome: <%= cliente.nome %></p>
         <p>CPF: <%= cliente.cpf %></p>
         <p>Email: <%= cliente.email %></p>
