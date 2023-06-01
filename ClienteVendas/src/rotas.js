@@ -15,8 +15,10 @@ rotas.delete('/vendas/:id',VendaControler.delete);
 rotas.post('/vendas/:id',VendaControler.update);
 
 // tentativa de criar menu || rotas.get('/home', FormularioController.home);
-rotas.get('/cad', FormularioController.cadastro);
+rotas.get('/form', FormularioController.formulario);
+rotas.get('/formulario.html', FormularioController.formulario);
 rotas.post('/add', FormularioController.register);
+rotas.get('/menu',FormularioController.menu);
 // tentativa de leitura BD || rotas.get('/ler',FormularioController.read);
 
 module.exports = rotas;
