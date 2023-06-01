@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fazer node.js</title>
+    <title>Cadastro de Cliente</title>
 </head>
+<style>
+    body{
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgb(53, 13, 94);
+        margin-top: 10%;
+        margin-right: 35%;
+        margin-left: 35%;
+    }
+    legend{
+        color: blueviolet;
+    }
+        .button-send{
+            color: black;
+            box-shadow: chocolate;
+        }
+        .form-cadastro{
+            border: 2px solid blueviolet;
+            background-color: rgba(169, 146, 226, 0.3)
+        }
+    
+</style>
+
 <body>
-    <form action="/add" method="post">
+    <legend> <h1>Cadastro de Cliente</h1> </legend>
+    <form class="form-cadastro" action="/add" method="post">
         <p>Nome: </p>
         <input type="text" name="nome"><br>
         <p>CPF: </p>
@@ -17,8 +43,9 @@
         <p>Telefone: </p>
         <input type="text" name="telefone">
         <p>Fidelidade: </p>
-        <input type="text" name="fidelidade" value="false"><br>
-        <input type="submit" name="Enviar"><br>
+        <input  type="text" name="fidelidade" value="true"><br><br>
+        <input class="button-send" type="submit" name="Enviar"><br><br>
+    
 </form>
 </body>
 </html>

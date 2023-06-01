@@ -5,22 +5,12 @@ const app = express();
 const path = require('path');
 const fs = require('fs');
 
-// configurando ejs
+// Config. Ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-/* Metodo usando handlebar, porem ao return res.render('formulario');
-não estava sendo encontrado o arquivo 'formulario' 
-const handlebars = require('express-handlebars');
-app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'views'));
-*/
-
-// retornando o body-parser
-
+// Config. bodyParser
 const bodyParser = require('body-parser');
-const { off } = require('process');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -42,7 +32,7 @@ module.exports = {
     },
 
     async menu (req,res){
-        const filePath = path.join(__dirname,'../views/index.html')
+        const filePath = path.join(__dirname,'../views/menu.html')
  
         fs.readFile(filePath, 'utf8', (err, data) => {
          if (err) {
@@ -69,7 +59,7 @@ module.exports = {
             res.redirect('menu');
     },
 
-    async listClients(req, res) {
+    async listClientes(req, res) {
         
           const clientes = await Cliente.find();
           res.render('listarClientes.ejs', { clientes });
@@ -126,3 +116,13 @@ module.exports = {
          res.send(data);
        });
     },*/
+
+    /* Metodo usando handlebar, porem ao return res.render('formulario');
+não estava sendo encontrado o arquivo 'formulario' 
+const handlebars = require('express-handlebars');
+app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views'));
+*/
+
+// retornando o body-parser
