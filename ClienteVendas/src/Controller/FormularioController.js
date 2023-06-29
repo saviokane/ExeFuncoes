@@ -86,14 +86,33 @@ module.exports = {
             res.redirect('/menu.html');    
     },
 
-  
+   async atualizardados (req,res){
+    const filePath = path.join(__dirname,'../views/atualizardados.html')
 
+    fs.readFile(filePath, 'utf8', (err, data) => {
+     if (err) {
+       console.error('Erro ao ler o arquivo:', err);
+       return res.status(500).send('Arquivo não foi encontrado.');
+     }
+     res.set('Content-Type', 'text/html');
+     res.send(data);
+   });
+ },
+
+ async update (req, res){
+
+  const {id, nome,cpf,email,telefone,fidelidade} = req.body;
+  const clienteUpdate = await Cliente.findByIdAndUpdate(id,
+  {nome, cpf, telefone, email}, 
+  {new : fidelidade})
+  console.log('Cliente novo atualizado: ', Cliente.nome);  
+    return res.json(clienteUpdate);
 
 
   }
 
 
-    
+}
 
 
 

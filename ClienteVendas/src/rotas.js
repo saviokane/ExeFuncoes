@@ -26,5 +26,6 @@ rotas.get('/listarClientes.ejs',FormularioController.listClientes);
 
 rotas.get('/deletar.html',FormularioController.deletar);
 rotas.post('/delete',FormularioController.delete);
-
+rotas.get('/atualizar',FormularioController.atualizardados);
+rotas.post('/atualizado',FormularioController.update);
 module.exports = rotas;
